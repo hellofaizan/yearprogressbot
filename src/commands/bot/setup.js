@@ -25,7 +25,7 @@ module.exports = {
                 const progressBar = '▓'.repeat(Math.floor(daysused / 20)) + '░'.repeat(Math.floor(days / 20));
                 // const daysused into percentage
                 const percentage = Math.floor(daysused / 365 * 100);
-                await channel.send(`**${days}** days until new year!`);
+                await channel.send(`You wasted **${daysused}** days in ${newYear.format('YYYY') - 1} 😂`);
                 await channel.send(progressBar + ' ' + percentage + '%');
 
             }
