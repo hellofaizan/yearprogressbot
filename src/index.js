@@ -10,28 +10,17 @@ const functions = fs.readdirSync("./src/functions").filter(file => file.endsWith
 const eventFiles = fs.readdirSync("./src/events").filter(file => file.endsWith(".js"));
 const commandFolders = fs.readdirSync("./src/commands");
 
-let status = [
-    {
-        name: "📐 | /setup <#channel>",
-        type: "PLAYING"
-    },
-    {
-        name: "🌍 | yp.hellofaizan.me",
-        type: "PLAYING"
-    },
-    {
-        name: `${client.guilds.cache.size} servers`,
-        type: "WATCHING"
-    }
-]
-
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    setInterval(() => {
-        let random = Math.floor(Math.random() * status.length);
-        client.user.setActivity(status[random]);
-    }, 10000);
+    // setInterval(() => {
+    //     let random = Math.floor(Math.random() * status.length);
+    //     client.user.setPresence(status[random]);
+    // }, 10000);
+    client.user.setPresence({ activities: [
+        { name: `out in ${client.guilds.cache.size} servers`, type: ActivityType.Watching },
+    ] });
     console.log(`Ready to serve ${client.guilds.cache.size} servers!`);
+
 });
 
 (async () => {

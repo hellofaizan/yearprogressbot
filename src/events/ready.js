@@ -2,7 +2,7 @@ module.exports = {
     name: 'ready',
     once: true,
     async execute(client) {
-        console.log('Ready!');
+        console.log('Ready! Get Set Gooo');
 
         async function pickPresence () {
             const option = Math.floor(Math.random() * statusArray.length);

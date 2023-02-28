@@ -12,7 +12,7 @@ module.exports = {
         const exampleEmbed = {
             color: 0x0099ff,
             title: 'Invite Link',
-            url: 'https://discord.com/api/oauth2/authorize?client_id=1079281779246116926&permissions=2684356632&scope=bot%20applications.commands',
+            url: 'http://yp.hellofaizan.me/',
             description: 'Click the title to get an invite link for the bot!',
             timestamp: new Date(),
             footer: {
