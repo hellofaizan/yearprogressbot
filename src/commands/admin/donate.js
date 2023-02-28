@@ -1,34 +1,30 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const Discord = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('donate')
-        .setDescription('Donate and Support the bot developers'),
+        .setDescription('Donate to the developer of this bot'),
     async execute(interaction, client) {
-        let row = new Discord.ActionRowBuilder()
-            .addComponents(
-                new Discord.ButtonBuilder()
-                    .setLabel('Invite')
-                    .setStyle(5)
-                    .setURL('https://discord.com/api/oauth2/authorize?client_id=1079281779246116926&permissions=2684356632&scope=applications.commands%20bot')
-            )
-            .addComponents(
-                new Discord.ButtonBuilder()
-                    .setLabel('Support Server')
-                    .setStyle(5)
-                    .setURL('https://discord.gg/invite/rraBbMQraQ')
-            )
-
-        // Create a new embed
+        // Create a new embed and also attach few buttons
         const embed = {
-            title: 'About the Bot',
-            description: 'This bot is made by hellofaizan',
-            thumbnail: client.user.avatarURL({ dynamic: true }),
-            url: "https://github.com/sponsors/CorwinDev",
-            components: [row],
-            type: 'editreply',
+            title: 'Donate to the developer',
+            fields: [
+                {
+                    name: 'Github Sponser',
+                    value: 'https://github.com/sponsors/hellofaizan'
+                },
+            ],
+            thumbnail: {
+                url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
+            },
+
+            color: 0x0099ff,
+            footer: {
+                text: 'Thank you for your support!',
+            },
         };
+        // Send the embed to the same channel as the message
         await interaction.reply({ embeds: [embed] });
     },
+
 }
