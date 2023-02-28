@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "moment": "^2.29.4",
+    "nodemon": "^2.0.20"
+  },
+  "name": "yearprogress",
+  "description": "🤖 Discord JS 14 Bot Template. Developed by [HelloFaizan](https://l.hellofaizan.me/)",
+  "version": "1.0.0",
+  "main": "src/index",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hellofaizan/yearprogress.git"
+  },
+  "keywords": [
+    "yearprogress"
+  ],
+  "author": "HelloFaizan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hellofaizan/yearprogress/issues"
+  },
+  "homepage": "https://github.com/hellofaizan/yearprogress#readme"
+}
