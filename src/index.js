@@ -17,7 +17,7 @@ client.on("ready", () => {
     //     client.user.setPresence(status[random]);
     // }, 10000);
     client.user.setPresence({ activities: [
-        { name: `out in ${client.guilds.cache.size} servers`, type: ActivityType.Watching },
+        { name: `with the days in a year`, type: ActivityType.Playing },
     ] });
     console.log(`Ready to serve ${client.guilds.cache.size} servers!`);
 
