@@ -17,7 +17,7 @@ client.on("ready", () => {
     //     client.user.setPresence(status[random]);
     // }, 10000);
     client.user.setPresence({ activities: [
-        { name: `with the days in a year`, type: ActivityType.Playing },
+        { name: `| yt.hellofaizan.me`, type: ActivityType.Watching },
     ] });
     console.log(`Ready to serve ${client.guilds.cache.size} servers!`);
 
