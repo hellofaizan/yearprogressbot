@@ -1,5 +1,4 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageActionRow, MessageButton } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -26,6 +25,6 @@ module.exports = {
 
 
         // send the embed
-        await interaction.reply(`Currently active in ${guilds} servers!`);
+        await interaction.reply({ embeds: [exampleEmbed] });
     },
 }
