@@ -10,14 +10,6 @@
     <img src="https://skillicons.dev/icons?i=js,mongodb" />
   </a>
 
-## 💪🏽 Contributors
-
-Thank you so much all for spending your time to improve 𝕏 Profile.
-
-<a href="https://github.com/hellofaizan/yearprogress/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=hellofaizan/yearprogress" />
-</a>
-
 ## Star History
 
 <a href="https://star-history.com/#hellofaizan/yearprogress&Date">
@@ -35,6 +27,14 @@ Thank you so much all for spending your time to improve 𝕏 Profile.
      <img src="https://invidget.switchblade.xyz/vUHMxPvege" width="400" height="100" />
 </a>
 <hr/>
+
+## 💪🏽 Contributors
+
+Thank you so much all for spending your time to improve 𝕏 Profile.
+
+<a href="https://github.com/hellofaizan/yearprogress/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=hellofaizan/yearprogress" />
+</a>
 
 ## 📜 License
 
