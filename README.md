@@ -1,9 +1,13 @@
-# ## This bot needs improvement
+# This bot needs improvement
+
+## Preview
+
+
 
 ## Languages/Tools
 
 <a href="https://discord.gg/vUHMxPvege">
-    <img src="https://skillicons.dev/icons?i=js,react,mongodb" />
+    <img src="https://skillicons.dev/icons?i=js,mongodb" />
   </a>
 
 ## 💪🏽 Contributors
@@ -13,10 +17,6 @@ Thank you so much all for spending your time to improve 𝕏 Profile.
 <a href="https://github.com/hellofaizan/yearprogress/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=hellofaizan/yearprogress" />
 </a>
-
-## Repository Activity
-
-![Alt](https://repobeats.axiom.co/api/embed/3c905c2b26fc447eb080acba085a899468acd7e3.svg "Repobeats analytics image")
 
 ## Star History
 
