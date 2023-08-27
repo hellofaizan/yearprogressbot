@@ -1,4 +1,4 @@
-# ## Need to edit much
+# ## This bot needs improvement
 
 ## 📜 License
 
