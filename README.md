@@ -2,7 +2,7 @@
 
 ## Preview
 
-https://cdn.discordapp.com/attachments/1065518726855807067/1145207649374306344/image0.jpg
+<img src="https://cdn.discordapp.com/attachments/1065518726855807067/1145207649374306344/image0.jpg" alt="Preview Image" />
 
 ## Languages/Tools
 
