@@ -8,6 +8,7 @@ module.exports = {
         // Create a new embed and also attach few buttons
         const embed = {
             title: 'Donate to the developer',
+            description: 'It\'s actually a good thought, go for it 😄',
             fields: [
                 {
                     name: 'Github Sponser',
@@ -16,6 +17,7 @@ module.exports = {
                 {
                     name: 'Paypal',
                     value: 'https://paypal.me/hellofaizan?country.x=IN&locale.x=en_GB'
+
                 }
             ],
             thumbnail: {
@@ -23,6 +25,9 @@ module.exports = {
             },
 
             color: 0x0099ff,
+            image: {
+                url: 'https://cdn.discordapp.com/attachments/1065518726855807067/1149178725842305074/20230907_083536.jpg'
+            },
             footer: {
                 text: 'Thank you for your support!',
             },
