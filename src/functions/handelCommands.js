@@ -2,7 +2,7 @@ const { REST } = require("@discordjs/rest");
 const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
 
-const clientId = '1079281779246116926';
+const clientId = '1149585932924768326'; //client id of bot
 
 module.exports = (client) => {
     client.handleCommands = async (commandFolders, path) => {
@@ -17,19 +17,19 @@ module.exports = (client) => {
         }
 
         const rest = new REST({
-            version: '9'
+            version: '10'
         }).setToken(process.env.token);
 
         (async () => {
             try {
                 console.log('Started refreshing application (/) commands.');
 
+                // giving error here
                 await rest.put(
-                    // If public Bot, use Routes.applicationCommands(clientId)
-                    Routes.applicationCommands(clientId), {
-                        body: client.commandArray
-                    },
-                );
+                    Routes.applicationCommands(clientId),
+                    { body: client.commandArray}
+
+                )
 
                 console.log('Successfully reloaded application (/) commands.');
             } catch (error) {

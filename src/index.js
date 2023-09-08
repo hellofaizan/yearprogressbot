@@ -1,6 +1,8 @@
-const { Client, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permissions, MessageManager, Embed, Collection, ActivityType } = require(`discord.js`);
+const { Client, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permissions, MessageManager, Embed, Collection, ActivityType, channelLink } = require(`discord.js`);
 const fs = require('fs');
+const moment = require('moment')
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+const { connectToMongo, clientdb } = require('./db');
 
 client.commands = new Collection();
 
@@ -12,16 +14,66 @@ const commandFolders = fs.readdirSync("./src/commands");
 
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    // setInterval(() => {
-    //     let random = Math.floor(Math.random() * status.length);
-    //     client.user.setPresence(status[random]);
-    // }, 10000);
-    client.user.setPresence({ activities: [
-        { name: `𝕏 •• xxx.hellofaizan.me`, type: ActivityType.Playing },
-    ] });
+    connectToMongo()
+        .then(() => {
+            retreveData()
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    client.user.setPresence({
+        activities: [
+            { name: `𝕏 •• xxx.hellofaizan.me`, type: ActivityType.Playing },
+        ]
+    });
     console.log(`Ready to serve ${client.guilds.cache.size} servers!`);
 
 });
+
+async function retreveData() {
+    try {
+
+        const collection = clientdb.db('yearlyProgress').collection('servers')
+        const data = await collection.find({}).toArray()
+        
+
+        data.forEach(({ user, channel, server }) => {
+            
+            const channelId = client.channels.fetch(channel)
+            
+
+            async function sendDaysUntilNewYear() {
+                const today = moment();
+                const newYear = moment().add(1, 'year').startOf('year');
+                const days = newYear.diff(today, 'days');
+
+                const daysused = 365 - days;
+                const progressBar = '▓'.repeat(Math.floor(daysused / 20)) + '░'.repeat(Math.floor(days / 20));
+                // const daysused into percentage
+                const percentage = Math.floor(daysused / 365 * 100);
+
+                if (server && channelId) {
+                    await channelId.send(`You wasted **${daysused}** days in ${newYear.format('YYYY') - 1} 😂`);
+                    await channelId.send(progressBar + ' ' + percentage + '%');
+                }
+
+            }
+            // Task to send a message every week
+            async function messageTask() {
+                server && channelId;
+                while (true) {
+                    await sendDaysUntilNewYear();
+                    await new Promise(resolve => setTimeout(resolve, 345600000)); // 4 days = 4 * 24 * 60 * 60 * 1000 milliseconds
+                }
+            }
+            messageTask();
+        })
+    } catch (error) {
+
+    }
+}
+
+
 
 (async () => {
     for (file of functions) {

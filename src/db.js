@@ -1,11 +1,11 @@
-const {MongoCliemt} = require('mongodb');
+const { MongoClient } = require('mongodb');
 require('dotenv').config();
 
 const url = process.env.dbLink
 
-const client = new MongoCliemt(url, {useNewUrlParser: true, useUnifiedTopology: true})
+const client = new MongoClient(url)
 
-async function connectToMomgo() {
+async function connectToMongo() {
     try {
         await client.connect()
         console.log("🎉 Connected to Mongo DB Successfully")
@@ -15,6 +15,6 @@ async function connectToMomgo() {
 }
 
 module.exports = {
-    connectToMomgo,
-    client
+    connectToMongo,
+    clientdb: client
 }
