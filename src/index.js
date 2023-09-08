@@ -36,11 +36,9 @@ async function retreveData() {
         const collection = clientdb.db('yearlyProgress').collection('servers')
         const data = await collection.find({}).toArray()
         
+        data.map(function (item) {
 
-        data.forEach(({ user, channel, server }) => {
-            
-            const channelId = client.channels.fetch(channel)
-            
+            const channel = item.channel
 
             async function sendDaysUntilNewYear() {
                 const today = moment();
@@ -49,18 +47,18 @@ async function retreveData() {
 
                 const daysused = 365 - days;
                 const progressBar = '▓'.repeat(Math.floor(daysused / 20)) + '░'.repeat(Math.floor(days / 20));
+
+                const mainChannel = client.channels.cache.get(channel)
+                
                 // const daysused into percentage
                 const percentage = Math.floor(daysused / 365 * 100);
-
-                if (server && channelId) {
-                    await channelId.send(`You wasted **${daysused}** days in ${newYear.format('YYYY') - 1} 😂`);
-                    await channelId.send(progressBar + ' ' + percentage + '%');
-                }
+                mainChannel.send(`We wasted **${daysused}** days in ${newYear.format('YYYY') - 1}. Just ${days} left`);
+                mainChannel.send(progressBar + ' ' + percentage + '%');
 
             }
             // Task to send a message every week
             async function messageTask() {
-                server && channelId;
+                await channel
                 while (true) {
                     await sendDaysUntilNewYear();
                     await new Promise(resolve => setTimeout(resolve, 345600000)); // 4 days = 4 * 24 * 60 * 60 * 1000 milliseconds
@@ -69,8 +67,9 @@ async function retreveData() {
             messageTask();
         })
     } catch (error) {
-
+        console.log(error)
     }
+
 }
 
 
