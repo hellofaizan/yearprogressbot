@@ -13,6 +13,10 @@ module.exports = {
                     name: 'Github Sponser',
                     value: 'https://github.com/sponsors/hellofaizan'
                 },
+                {
+                    name: 'Paypal',
+                    value: 'https://paypal.me/hellofaizan?country.x=IN&locale.x=en_GB'
+                }
             ],
             thumbnail: {
                 url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',

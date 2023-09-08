@@ -18,7 +18,7 @@ module.exports = {
             url: 'http://yp.hellofaizan.me/',
             timestamp: new Date(),
             footer: {
-                name: 'Made by HelloFaizan#2746',
+                name: 'Made by HelloFaizan#0',
                 icon_url: botIcon,
             },
         };
