@@ -52,8 +52,7 @@ async function retreveData() {
                 
                 // const daysused into percentage
                 const percentage = Math.floor(daysused / 365 * 100);
-                mainChannel.send(`We wasted **${daysused}** days in ${newYear.format('YYYY') - 1}. Just ${days} left`);
-                mainChannel.send(progressBar + ' ' + percentage + '%');
+                mainChannel.send(`We wasted **${daysused}** days in ${newYear.format('YYYY') - 1}. ${days} left \n ${progressBar} ${percentage} % 😂`);
 
             }
             // Task to send a message every week
