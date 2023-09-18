@@ -30,6 +30,32 @@ client.on("ready", () => {
 
 });
 
+// every time bot joins a server
+client.on("guildCreate", guild => {
+    console.log(`Joined ${guild.name}`);
+    const collection = clientdb.db('yearlyProgress').collection('newservers')
+    collection.insertOne({ server: guild.id, channel: guild.systemChannelId })
+        .then(() => {
+            console.log('Data inserted')
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+});
+
+// every time bot leaves a server
+client.on("guildDelete", guild => {
+    console.log(`Left ${guild.name}`);
+    const collection = clientdb.db('yearlyProgress').collection('servers')
+    collection.deleteOne({ server: guild.id })
+        .then(() => {
+            console.log('Data deleted')
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+});
+
 async function retreveData() {
     try {
 
